@@ -1,0 +1,25 @@
+.center {
+    text-align: center;
+    align-content: center;
+}
+
+.color {
+    color: blue;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    font-family: Arial, Verdana, sans-serif;
+    border: 1px solid #000; /* let's apply borders */
+}
+
+.first-table {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.first-table th {
+    background: tan;
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet name="CSS/myStyle.css"/>
+</h:head>
+<h:body>
+    <f:view>
+        <h:outputLabel value="Hello, getUsers"/>
+    </f:view>
+    <br/><br/>
+
+    <h:dataTable value="#{userDaoBean.users}" var="o"
+                 styleClass="first-table">
+
+        <h:column>
+            <f:facet name="header">imie</f:facet>
+            #{o.name}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">nazwisko</f:facet>
+            #{o.surname}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">wiek</f:facet>
+            #{o.age}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">płeć</f:facet>
+            #{o.gender}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">telefon</f:facet>
+            #{o.telephone}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">komorka</f:facet>
+            #{o.mobile}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">adres</f:facet>
+            #{o.address}
+        </h:column>
+
+    </h:dataTable>
+
+</h:body>
+</html>
