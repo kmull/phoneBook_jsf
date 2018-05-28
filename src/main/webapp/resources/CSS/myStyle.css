@@ -7,16 +7,22 @@
     color: blue;
 }
 
-th,
-td {
-    padding: 5px;
-    text-align: left;
-    font-family: Arial, Verdana, sans-serif;
-    border: 1px solid #000; /* let's apply borders */
-}
+/*th,*/
+/*td {*/
+    /*padding: 5px;*/
+    /*text-align: left;*/
+    /*font-family: Arial, Verdana, sans-serif;*/
+    /*border: 1px solid #000; !* let's apply borders *!*/
+/*}*/
 
 .first-table {
     width: 100%;
+}
+
+.first-table th,
+.first-table td {
+    text-align: left;
+    /*width: 100%;*/
     border: 1px solid black;
 }
 

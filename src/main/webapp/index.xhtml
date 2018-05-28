@@ -23,6 +23,27 @@
 
     <a href="getUsers.xhtml">Get users</a>
 
+    <h:form>
+        <h3>go to addUser.xhtml</h3>
+        <h:commandButton action="#{navigationBean.moveTo_addUser}"
+                         value="add user" />
+        <br/>
+        <br/>
+        <h:commandButton action="#{navigationBean.moveTo_getUsers}"
+                         value="get users" />
+        <br/>
+        <br/>
+        <h:commandButton action="#{navigationBean.moveTo_getUsersOnClick}"
+                         value="get users on click" />
+
+    </h:form>
+
+    <!--<h:form>-->
+        <!--<h3>go to addUser.xhtml</h3>-->
+        <!--<h:commandButton action="#{navigationController.moveTo_addUser}" value="addUser" />-->
+        <!--&lt;!&ndash;<h:commandButton action="#{navigationController.moveTo_getUsers}" value="get Users" />&ndash;&gt;-->
+    <!--</h:form>-->
+
 </h:body>
 
 </html>

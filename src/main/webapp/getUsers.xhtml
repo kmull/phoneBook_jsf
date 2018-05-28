@@ -12,6 +12,7 @@
     <f:view>
         <h:outputLabel value="Hello, getUsers"/>
     </f:view>
+
     <br/><br/>
 
     <h:dataTable value="#{userDaoBean.users}" var="o"
@@ -53,6 +54,10 @@
         </h:column>
 
     </h:dataTable>
-
+    <h:form>
+        <h3>go to addUser.xhtml</h3>
+        <h:commandButton action="#{navigationBean.moveTo_index}"
+                         value="home" />
+    </h:form>
 </h:body>
 </html>

@@ -1,0 +1,16 @@
+<navigation-rule>
+    <from-view-id>index.xhtml</from-view-id>
+
+    <navigation-case>
+        <from-action>#{navigationController.addUser}</from-action>
+        <from-outcome>addUser</from-outcome>
+        <to-view-id>addUser.xhtml</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+        <from-action>#{navigationController.processPage2}</from-action>
+        <from-outcome>page</from-outcome>
+        <to-view-id>page2.jsf</to-view-id>
+    </navigation-case>
+
+</navigation-rule>
