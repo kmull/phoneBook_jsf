@@ -5,7 +5,12 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
-@NamedQuery(name = "getUserList", query = "from MyUser")
+@NamedQueries({
+        @NamedQuery(name = "user.getList", query = "FROM MyUser"),
+        @NamedQuery(name = "user.find",
+                query = "SELECT OBJECT(emp) FROM MyUser emp " +
+                        "WHERE emp.name = :name AND emp.surname = :surname")
+})
 public class MyUser implements Serializable {
 
     @Id

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:outputLabel value="Hello, myTest"/>
+    <br/>
+    <div>#{test.data}</div>
+</f:view>
+
+<h:body>
+
+
+    <h:form>
+        <h:commandButton id="submitButton"
+                         value="Submit" action="#{test.myResult}"
+                         actionListener="#{test.updateData}">
+        </h:commandButton>
+        <h2>Action Listiner interface</h2>
+        <hr/>
+
+        <h:commandButton id="submitButton1"
+                         value="Submit" action="#{test.myResult}">
+            <f:actionListener
+                    type="com.muller.myTelephoneBook.action.UserActionListener"/>
+        </h:commandButton>
+
+    </h:form>
+
+</h:body>
+
+</html>

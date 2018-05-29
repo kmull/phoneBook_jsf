@@ -14,30 +14,43 @@
         <!--<h3>go to addUser.xhtml</h3>-->
         <h:outputLabel class="center" value="Hello, Krzysztof "/>
         <h:commandButton action="#{navigationBean.moveTo_index}"
-                         value="home" />
+                         value="home"/>
     </h:form>
     <br/><br/>
-    <!--<p:commandButton value="Go" styleClass="apply_button"
-    actionListener="#{searchBean.getUserList}" update="table-wrapper">-->
 
-    <!--<h:dataTable value="#{userDaoBean.users}" var="o"-->
-                 <!--styleClass="first-table">-->
+    <!--<p:commandButton id="go" value=" Go " action="#{navigationBean.moveTo_getUsersOnClick}"-->
+                     <!--actionListener="#{userDaoBean.getUserList}" update="table-wrapper">-->
+        <!--<f:attribute name="name" value="#{userDaoBean.myUser.name}"/>-->
+        <!--<f:attribute name="surname" value="#{userDaoBean.myUser.surname}"/>-->
+    <!--</p:commandButton>-->
 
-    <p:commandButton id="go" value=" Go " actionListener="#{userDaoBean.listUser}" update="table-wrapper" >
-        <f:attribute name="name" value="#{userDaoBean.myUser.name}"/>
-        <f:attribute name="surname" value="#{userDaoBean.myUser.surname}"/>
-    </p:commandButton>
-
-    <h:panelGrid id="table-wrapper">
-        <p:dataTable rendered="#{userDaoBean.visible}" value="#{userDaoBean.listUser}" var="tab">
-            <p:column headerText="Imie">
-                <h:outputText value="#{tab.name}"/>
-            </p:column>
-        </p:dataTable>
-    </h:panelGrid>
+    <!--<h:panelGrid id="table-wrapper">-->
+        <!--<p:dataTable rendered="#{userDaoBean.visible}" value="#{userDaoBean.listUser}" var="tab">-->
+            <!--<p:column headerText="Imie">-->
+                <!--<h:outputText value="#{userDaoBean.myUser.name}"/>-->
+            <!--</p:column>-->
+        <!--</p:dataTable>-->
+    <!--</h:panelGrid>-->
 
 
+    <!--<h:form>-->
+        <!--<h:commandButton id="submitButton"-->
+                         <!--value="Submit" action="#{test.myResult}"-->
+                         <!--actionListener="#{test.updateData}">-->
+        <!--</h:commandButton>-->
+        <!--<h2>Action Listiner interface</h2>-->
+        <!--<hr/>-->
 
+        <!--<h:commandButton id="submitButton1"-->
+                         <!--value="Submit" action="#{test.myResult}">-->
+            <!--<f:actionListener-->
+                    <!--type="com.muller.myTelephoneBook.action.UserActionListener"/>-->
+        <!--</h:commandButton>-->
+
+    <!--</h:form>-->
+
+
+    <!--#{test.data}-->
 </h:body>
 
 </html>

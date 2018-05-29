@@ -11,4 +11,6 @@ public interface UserDao {
     public void addUser(MyUser myUser);
 
     public List<MyUser> getUsers();
+
+    public MyUser findMyUser(String name, String surname);
 }

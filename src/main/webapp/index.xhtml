@@ -16,6 +16,14 @@
     <f:view>
         <h:outputLabel styleClass="center" value="Hello, index.xhtml"/>
     </f:view>
+
+    <h:form>
+        <!--<h3>go to addUser.xhtml</h3>-->
+        <h:outputLabel class="center" value="Hello, Krzysztof "/>
+        <h:commandButton action="#{navigationBean.moveTo_index}"
+                         value="home" />
+    </h:form>
+
     <br/><br/>
 
     <a href="addUser.xhtml">Add user</a>
@@ -33,8 +41,8 @@
                          value="get users" />
         <br/>
         <br/>
-        <h:commandButton action="#{navigationBean.moveTo_getUsersOnClick}"
-                         value="get users on click" />
+        <h:commandButton action="#{navigationBean.moveTo_myTest}"
+                         value="my test" />
 
     </h:form>
 

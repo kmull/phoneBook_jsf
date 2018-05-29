@@ -37,6 +37,14 @@ public class NavigationBean {
         return "getUsersOnClick";
     }
 
+    public String moveTo_myResult() {
+        return "myResult";
+    }
+
+    public String moveTo_myTest() {
+        return "myTest";
+    }
+
     public String moveTo_index() {
         return "index";
     }
