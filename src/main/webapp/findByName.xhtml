@@ -4,36 +4,111 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://java.sun.com/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-
+    <h:outputStylesheet name="CSS/myStyle.css"/>
 </h:head>
 
 <h:body>
-    <f:view>
-        <h:outputLabel value="Find by name"/>
-    </f:view>
+    <h:form>
+        <h:outputLabel value="Find by name   "/>
+        <h:commandButton action="#{navigationBean.moveTo_index}"
+                         value="home" />
+    </h:form>
     <br/><br/>
 
+    <!--<h:form>-->
+    <!--<h:commandButton value="Go" styleClass="apply_button" actionListener="#{searchBean.getUserList}"-->
+    <!--update="table-wrapper">-->
+    <!--<f:attribute name="trigram" value="#{searchBean.trigram}"/>-->
+    <!--<f:attribute name="firstName" value="#{searchBean.firstName}"/>-->
+    <!--<f:attribute name="lastName" value="#{searchBean.lastName}"/>-->
+    <!--</h:commandButton>-->
+
+    <!--<h:panelGroup id="table-wrapper">-->
+    <!--<h:dataTable rendered="#{searchBean.visible}" value="#{searchBean.listUser}" var="user">-->
+    <!--<h:column headerText="Trigram">-->
+    <!--<h:outputText value="#{searchBean.trigram}"/>-->
+    <!--</h:column>-->
+    <!--</h:dataTable>-->
+    <!--</h:panelGroup>-->
+
+    <!--</h:form>-->
+
+
+    <h:dataTable value="#{userDaoBean.users}" var="o"
+                 styleClass="first-table">
+
+        <h:column>
+            <f:facet name="header">imie</f:facet>
+            #{o.name}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">nazwisko</f:facet>
+            #{o.surname}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">wiek</f:facet>
+            #{o.age}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">płeć</f:facet>
+            #{o.gender}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">telefon</f:facet>
+            #{o.telephone}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">komorka</f:facet>
+            #{o.mobile}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">adres</f:facet>
+            #{o.address}
+        </h:column>
+
+    </h:dataTable>
+
+    <!--<h:form>-->
+    <!--<h:panelGrid columns="2" cellpadding="5">-->
+
+    <!--<h:outputLabel/><p:message for="nameInput" style="color: red"/>-->
+    <!--<p:outputLabel value="podaj imie:"/>-->
+    <!--<p:inputText id="nameInput" value="#{userDaoBean.myUser.name}" label="imie">-->
+    <!--<f:validateLength minimum="3" maximum="20"/>-->
+    <!--</p:inputText>-->
+
+    <br/>
+    <br/>
     <h:form>
-    <h:commandButton value="Go" styleClass="apply_button" actionListener="#{searchBean.getUserList}"
-                     update="table-wrapper">
-        <f:attribute name="trigram" value="#{searchBean.trigram}"/>
-        <f:attribute name="firstName" value="#{searchBean.firstName}"/>
-        <f:attribute name="lastName" value="#{searchBean.lastName}"/>
-    </h:commandButton>
+        <h:panelGrid columns="2" cellpadding="2">
+            <h:outputLabel value="podaj imie:"/>
+            <h:inputText value="#{userDaoBean.name}"/>
 
-        <h:panelGroup id="table-wrapper">
-            <h:dataTable rendered="#{searchBean.visible}" value="#{searchBean.listUser}" var="user">
-                <h:column headerText="Trigram">
-                    <h:outputText value="#{searchBean.trigram}"/>
-                </h:column>
-            </h:dataTable>
-        </h:panelGroup>
-
+            <h:outputLabel value="podaj nazwisko:"/>
+            <h:inputText value="#{userDaoBean.surname}"/>
+        </h:panelGrid>
+        <p:commandButton value="Find" action="#{userDaoBean.findMyUser()}"/>
     </h:form>
-
+    <br/>
+    <p:outputLabel value="Szukane dane:"/>
+    <br/>
+    <hr/>
+    <br/>
+    <p>#{userDaoBean.findMyUser.name}</p>
+    <p>#{userDaoBean.findMyUser.surname}</p>
+    <p>#{userDaoBean.findMyUser.mobile}</p>
+    <p>#{userDaoBean.findMyUser.telephone}</p>
+    <p>#{userDaoBean.findMyUser.address}</p>
 
 </h:body>
 </html>

@@ -7,32 +7,28 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <!--<link rel="stylesheet" href="resources/CSS/myStyle.css"/>-->
     <h:outputStylesheet name="CSS/myStyle.css"/>
 </h:head>
 
 <h:body>
 
     <f:view>
-        <h:outputLabel styleClass="center" value="Hello, index.xhtml"/>
+        <div class="center">
+            <h:outputLabel value="Hello, index.xhtml"/>
+        </div>
     </f:view>
 
     <h:form>
         <!--<h3>go to addUser.xhtml</h3>-->
-        <h:outputLabel class="center" value="Hello, Krzysztof "/>
+        <h:outputLabel class="center" value="Hello, Krzysztof   "/>
         <h:commandButton action="#{navigationBean.moveTo_index}"
                          value="home" />
     </h:form>
 
     <br/><br/>
 
-    <a href="addUser.xhtml">Add user</a>
-    <br/>
-
-    <a href="getUsers.xhtml">Get users</a>
-
     <h:form>
-        <h3>go to addUser.xhtml</h3>
+        <h3>Simple menu:</h3>
         <h:commandButton action="#{navigationBean.moveTo_addUser}"
                          value="add user" />
         <br/>
@@ -43,7 +39,10 @@
         <br/>
         <h:commandButton action="#{navigationBean.moveTo_myTest}"
                          value="my test" />
-
+        <br/>
+        <br/>
+        <h:commandButton action="#{navigationBean.moveTo_findByName}"
+                         value="find user" />
     </h:form>
 
     <!--<h:form>-->

@@ -29,3 +29,7 @@
 .first-table th {
     background: tan;
 }
+hr {
+    width: 10%;
+    float: left;
+}

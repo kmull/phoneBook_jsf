@@ -14,7 +14,10 @@ import java.util.List;
 public class UserDaoBean implements UserDao {
     @EJB
     UsersRepository usersRepository;
+    private String name;
+    private String surname;
 
+    private MyUser findMyUser;
 
 
     private MyUser myUser = new MyUser();
@@ -38,11 +41,38 @@ public class UserDaoBean implements UserDao {
     }
 
     @Override
-    public MyUser findMyUser(String name, String surname) {
-        return usersRepository.getFindUser( name, surname);
+    public MyUser findMyUser() {
+        findMyUser = usersRepository.getFindUser(name, surname);
+        return findMyUser;
+//        return usersRepository.getFindUser(name, surname);
     }
 
-//    /*******************************************************/
+    public MyUser getFindMyUser() {
+        return findMyUser;
+    }
+
+    public void setFindMyUser(MyUser findMyUser) {
+        this.findMyUser = findMyUser;
+    }
+
+    /**********************************************************/
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    //    /*******************************************************/
 //    private boolean visible = false;
 //    private List<MyUser> listUser;// = new ArrayList<>();
 //
