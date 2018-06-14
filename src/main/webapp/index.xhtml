@@ -12,6 +12,24 @@
 
 <h:body>
 
+    <h:form>
+        <h:commandLink action="#{navig.showPage}" value="Add User">
+            <f:param name="pageId" value="1"/>
+        </h:commandLink>
+        |
+        <h:commandLink action="#{navig.showPage}" value="Get Users">
+            <f:param name="pageId" value="2"/>
+        </h:commandLink>
+        |
+        <h:commandLink action="#{navig.showPage}" value="My test">
+            <f:param name="pageId" value="3"/>
+        </h:commandLink>
+        |
+        <h:commandLink action="#{navig.showPage}" value="Find user">
+            <f:param name="pageId" value="4"/>
+        </h:commandLink>
+    </h:form>
+
     <f:view>
         <div class="center">
             <h:outputLabel value="Hello, index.xhtml"/>
@@ -21,34 +39,47 @@
     <h:form>
         <!--<h3>go to addUser.xhtml</h3>-->
         <h:outputLabel class="center" value="Hello, Krzysztof   "/>
-        <h:commandButton action="#{navigationBean.moveTo_index}"
-                         value="home" />
+        <h:commandButton action="#{navig.moveTo_index}"
+                         value="home"/>
     </h:form>
 
     <br/><br/>
 
     <h:form>
         <h3>Simple menu:</h3>
-        <h:commandButton action="#{navigationBean.moveTo_addUser}"
-                         value="add user" />
+        <h:commandButton action="#{navig.moveTo_addUser}"
+                         value="add user"/>
         <br/>
         <br/>
-        <h:commandButton action="#{navigationBean.moveTo_getUsers}"
-                         value="get users" />
+
+        <h:commandButton action="#{navig.showPage}"
+                         value="add user showPage">
+            <f:param name="pageId" value="1"/>
+        </h:commandButton>
         <br/>
         <br/>
-        <h:commandButton action="#{navigationBean.moveTo_myTest}"
-                         value="my test" />
+
+
+        <h:commandButton action="#{navig.moveTo_getUsers}"
+                         value="get users"/>
         <br/>
         <br/>
-        <h:commandButton action="#{navigationBean.moveTo_findByName}"
-                         value="find user" />
+        <h:commandButton action="#{navig.moveTo_myTest}"
+                         value="my test"/>
+        <br/>
+        <br/>
+        <h:commandButton action="#{navig.moveTo_findByName}"
+                         value="find user"/>
+        <br/>
+        <br/>
+        <h:commandButton action="#{navig.moveTo_myNavig}"
+                         value="my navig"/>
     </h:form>
 
     <!--<h:form>-->
-        <!--<h3>go to addUser.xhtml</h3>-->
-        <!--<h:commandButton action="#{navigationController.moveTo_addUser}" value="addUser" />-->
-        <!--&lt;!&ndash;<h:commandButton action="#{navigationController.moveTo_getUsers}" value="get Users" />&ndash;&gt;-->
+    <!--<h3>go to addUser.xhtml</h3>-->
+    <!--<h:commandButton action="#{navigationController.moveTo_addUser}" value="addUser" />-->
+    <!--&lt;!&ndash;<h:commandButton action="#{navigationController.moveTo_getUsers}" value="get Users" />&ndash;&gt;-->
     <!--</h:form>-->
 
 </h:body>

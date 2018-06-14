@@ -14,7 +14,7 @@
 <h:body>
     <h:form>
         <h:outputLabel value="Find by name   "/>
-        <h:commandButton action="#{navigationBean.moveTo_index}"
+        <h:commandButton action="#{navig.moveTo_index}"
                          value="home" />
     </h:form>
     <br/><br/>
@@ -40,7 +40,6 @@
 
     <h:dataTable value="#{userDaoBean.users}" var="o"
                  styleClass="first-table">
-
         <h:column>
             <f:facet name="header">imie</f:facet>
             #{o.name}
@@ -91,6 +90,7 @@
     <br/>
     <h:form>
         <h:panelGrid columns="2" cellpadding="2">
+
             <h:outputLabel value="podaj imie:"/>
             <h:inputText value="#{userDaoBean.name}"/>
 
@@ -109,6 +109,9 @@
     <p>#{userDaoBean.findMyUser.mobile}</p>
     <p>#{userDaoBean.findMyUser.telephone}</p>
     <p>#{userDaoBean.findMyUser.address}</p>
+    <br/>
+    <br/>
+    <br/>
 
 </h:body>
 </html>

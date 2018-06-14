@@ -2,14 +2,10 @@ package com.muller.myTelephoneBook.userDao;
 
 import com.muller.myTelephoneBook.domain.MyUser;
 import com.muller.myTelephoneBook.repository.UsersRepository;
-import org.hibernate.query.Query;
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import java.awt.event.ActionListener;
 import java.util.List;
 
-//@ManagedBean(name = "userData", eager = true)
 @ManagedBean
 public class UserDaoBean implements UserDao {
     @EJB
@@ -18,8 +14,6 @@ public class UserDaoBean implements UserDao {
     private String surname;
 
     private MyUser findMyUser;
-
-
     private MyUser myUser = new MyUser();
 
     public MyUser getMyUser() {
@@ -44,7 +38,6 @@ public class UserDaoBean implements UserDao {
     public MyUser findMyUser() {
         findMyUser = usersRepository.getFindUser(name, surname);
         return findMyUser;
-//        return usersRepository.getFindUser(name, surname);
     }
 
     public MyUser getFindMyUser() {

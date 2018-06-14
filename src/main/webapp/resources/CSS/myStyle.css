@@ -33,3 +33,6 @@ hr {
     width: 10%;
     float: left;
 }
+column {
+    border: 1px solid black
+}

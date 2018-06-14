@@ -1,0 +1,15 @@
+        <!--<h:form>-->
+        <!--<h:commandButton id="submitButton"-->
+        <!--value="Submit" action="#{navigationBean.moveTo_findResult}"-->
+        <!--actionListener="#{userFindByNameDaoBean.updateFindResult}">-->
+        <!--</h:commandButton>-->
+        <!--<h2>Action Listiner interface</h2>-->
+        <!--<hr/>-->
+
+        <!--<h:commandButton id="submitButton1"-->
+        <!--value="Submit" action="#{{navigationBean.moveTo_findResult}">-->
+        <!--<f:actionListener-->
+        <!--type="com.muller.myTelephoneBook.userDaoOnClick.UserFindByNameDaoBean"/>-->
+        <!--</h:commandButton>-->
+
+        <!--</h:form>-->
