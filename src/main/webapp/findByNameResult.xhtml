@@ -9,6 +9,9 @@
     <h:outputLabel value="Hello, world"/>
 </f:view>
 <h:body>
+    <ui:include src="menu.xhtml"/>
+    <br/>
+    <br/>
     <h:dataTable value="#{userFindByNameDaoBean.findMyUser}" var="o"
                  styleClass="first-table">
 

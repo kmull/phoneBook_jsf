@@ -8,7 +8,11 @@
 <h:head>
     <h:outputStylesheet name="CSS/myStyle.css"/>
 </h:head>
+
 <h:body>
+    <ui:include src="menu.xhtml" />
+    <br/>
+    <br/>
     <f:view>
         <h:outputLabel value="Hello, getUsers"/>
     </f:view>
@@ -56,8 +60,10 @@
     </h:dataTable>
     <h:form>
         <h3>go to addUser.xhtml</h3>
-        <h:commandButton action="#{navig.moveTo_index}"
-                         value="home" />
+        <h:commandButton action="#{navig.showPage}" value="Home">
+            <f:param name="pageId" value="0"/>
+        </h:commandButton>
+        <br/>
     </h:form>
 </h:body>
 </html>

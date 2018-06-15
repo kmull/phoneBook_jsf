@@ -12,10 +12,14 @@
 </h:head>
 
 <h:body>
+    <ui:include src="menu.xhtml" />
+    <br/>
     <h:form>
         <h:outputLabel value="Find by name   "/>
-        <h:commandButton action="#{navig.moveTo_index}"
-                         value="home" />
+        <h:commandButton action="#{navig.showPage}" value="Home">
+            <f:param name="pageId" value="0"/>
+        </h:commandButton>
+        <br/>
     </h:form>
     <br/><br/>
 

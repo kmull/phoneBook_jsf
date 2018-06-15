@@ -13,15 +13,14 @@
 </h:head>
 
 <h:body>
-    <!--<f:view>-->
-        <!--<h:outputLabel class="center" value="Hello, Krzysztof"/>-->
-    <!--</f:view>-->
+    <ui:include src="menu.xhtml" />
 
     <h:form>
-        <!--<h3>go to addUser.xhtml</h3>-->
         <h:outputLabel class="center" value="Hello, Krzysztof "/>
-        <h:commandButton action="#{navig.moveTo_index}"
-                         value="home" />
+        <h:commandButton action="#{navig.showPage}" value="Home">
+            <f:param name="pageId" value="0"/>
+        </h:commandButton>
+        <br/>
     </h:form>
 
 

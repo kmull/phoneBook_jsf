@@ -4,13 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
 
 <h:head>
     <h:outputStylesheet name="CSS/myStyle.css"/>
 </h:head>
 
 <h:body>
+
+    <ui:include src="menu.xhtml" />
 
     <h:form>
         <h:commandLink action="#{navig.showPage}" value="Add User">
@@ -32,56 +35,51 @@
 
     <f:view>
         <div class="center">
-            <h:outputLabel value="Hello, index.xhtml"/>
+            <h2><h:outputLabel value="Hello, index.xhtml"/></h2>
         </div>
     </f:view>
 
     <h:form>
         <!--<h3>go to addUser.xhtml</h3>-->
-        <h:outputLabel class="center" value="Hello, Krzysztof   "/>
-        <h:commandButton action="#{navig.moveTo_index}"
-                         value="home"/>
+        <h:outputLabel value="Hello, Krzysztof   "/>
+
     </h:form>
 
-    <br/><br/>
+    <br/>
+    <br/>
 
     <h:form>
         <h3>Simple menu:</h3>
-        <h:commandButton action="#{navig.moveTo_addUser}"
-                         value="add user"/>
-        <br/>
-        <br/>
-
-        <h:commandButton action="#{navig.showPage}"
-                         value="add user showPage">
+        <h:commandButton action="#{navig.showPage}" value="add user">
             <f:param name="pageId" value="1"/>
         </h:commandButton>
         <br/>
         <br/>
+        <h:commandButton action="#{navig.showPage}" value="add user">
+            <f:param name="pageId" value="1"/>
+        </h:commandButton>
+        <br/>
+        <br/>
+        <h:commandButton action="#{navig.showPage}" value="get users">
+            <f:param name="pageId" value="2"/>
+        </h:commandButton>
+        <br/>
+        <br/>
+        <h:commandButton action="#{navig.showPage}" value="my test">
+            <f:param name="pageId" value="3"/>
+        </h:commandButton>
+        <br/>
+        <br/>
+        <h:commandButton action="#{navig.showPage}" value="find user">
+            <f:param name="pageId" value="4"/>
+        </h:commandButton>
+        <br/>
+        <br/>
 
-
-        <h:commandButton action="#{navig.moveTo_getUsers}"
-                         value="get users"/>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.moveTo_myTest}"
-                         value="my test"/>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.moveTo_findByName}"
-                         value="find user"/>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.moveTo_myNavig}"
-                         value="my navig"/>
     </h:form>
 
-    <!--<h:form>-->
-    <!--<h3>go to addUser.xhtml</h3>-->
-    <!--<h:commandButton action="#{navigationController.moveTo_addUser}" value="addUser" />-->
-    <!--&lt;!&ndash;<h:commandButton action="#{navigationController.moveTo_getUsers}" value="get Users" />&ndash;&gt;-->
-    <!--</h:form>-->
 
 </h:body>
 
 </html>
+
