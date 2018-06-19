@@ -7,16 +7,8 @@
     color: blue;
 }
 
-/*th,*/
-/*td {*/
-    /*padding: 5px;*/
-    /*text-align: left;*/
-    /*font-family: Arial, Verdana, sans-serif;*/
-    /*border: 1px solid #000; !* let's apply borders *!*/
-/*}*/
-
 .first-table {
-    width: 100%;
+    width: 80%;
 }
 
 .first-table th,
@@ -29,10 +21,58 @@
 .first-table th {
     background: tan;
 }
+
 hr {
     width: 10%;
     float: left;
 }
+
 column {
     border: 1px solid black
 }
+
+table {
+    margin: 0px 20px 0px 20px;
+}
+
+.mainPanel {
+    margin: 200px;
+}
+
+.my_form {
+    margin-left: 20px;
+}
+
+.findByName_Home {
+    margin-left: 10px;
+}
+
+.generalSets {
+    margin-left: 20px;
+}
+
+.error {
+    color: red;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

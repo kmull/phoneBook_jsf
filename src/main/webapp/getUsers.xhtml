@@ -12,12 +12,11 @@
 <h:body>
     <ui:include src="menu.xhtml" />
     <br/>
-    <br/>
     <f:view>
-        <h:outputLabel value="Hello, getUsers"/>
+        <h2><h:outputLabel styleClass="generalSets" value="Tabela z uzytkownikami: "/></h2>
     </f:view>
 
-    <br/><br/>
+    <br/>
 
     <h:dataTable value="#{userDaoBean.users}" var="o"
                  styleClass="first-table">
@@ -58,12 +57,5 @@
         </h:column>
 
     </h:dataTable>
-    <h:form>
-        <h3>go to addUser.xhtml</h3>
-        <h:commandButton action="#{navig.showPage}" value="Home">
-            <f:param name="pageId" value="0"/>
-        </h:commandButton>
-        <br/>
-    </h:form>
 </h:body>
 </html>

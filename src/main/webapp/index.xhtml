@@ -13,7 +13,7 @@
 
 <h:body>
 
-    <ui:include src="menu.xhtml" />
+    <ui:include src="menu.xhtml"/>
 
     <h:form>
         <h:commandLink action="#{navig.showPage}" value="Add User">
@@ -33,53 +33,84 @@
         </h:commandLink>
     </h:form>
 
-    <f:view>
-        <div class="center">
-            <h2><h:outputLabel value="Hello, index.xhtml"/></h2>
-        </div>
-    </f:view>
+    <h:panelGroup styleClass="index_mainPanel">
+        <f:view>
+            <div class="center">
+                <h2><h:outputLabel value="Telephone Notes"/></h2>
+            </div>
+        </f:view>
 
-    <h:form>
-        <!--<h3>go to addUser.xhtml</h3>-->
-        <h:outputLabel value="Hello, Krzysztof   "/>
+        <h:form>
+            <!--<h3>go to addUser.xhtml</h3>-->
+            <h:outputLabel value="Hello, Krzysztof   "/>
+        </h:form>
+        <br/>
+        <br/>
 
-    </h:form>
-
+        <h:form>
+            <h3>Simple menu:</h3>
+            <h:commandButton action="#{navig.showPage}" value="add user">
+                <f:param name="pageId" value="1"/>
+            </h:commandButton>
+            <br/>
+            <br/>
+            <h:commandButton action="#{navig.showPage}" value="add user">
+                <f:param name="pageId" value="1"/>
+            </h:commandButton>
+            <br/>
+            <br/>
+            <h:commandButton action="#{navig.showPage}" value="get users">
+                <f:param name="pageId" value="2"/>
+            </h:commandButton>
+            <br/>
+            <br/>
+            <h:commandButton action="#{navig.showPage}" value="my test">
+                <f:param name="pageId" value="3"/>
+            </h:commandButton>
+            <br/>
+            <br/>
+            <h:commandButton action="#{navig.showPage}" value="find user">
+                <f:param name="pageId" value="4"/>
+            </h:commandButton>
+            <br/>
+            <br/>
+        </h:form>
+    </h:panelGroup>
     <br/>
     <br/>
 
     <h:form>
-        <h3>Simple menu:</h3>
-        <h:commandButton action="#{navig.showPage}" value="add user">
-            <f:param name="pageId" value="1"/>
+        <h2>Ajax Example</h2>
+        <br/>
+        <h:inputText id="inputName" value="#{userTest.name}"/>
+        <h:commandButton value="Show Message">
+            <f:ajax execute="inputName" render="outputMessage"/>
         </h:commandButton>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.showPage}" value="add user">
-            <f:param name="pageId" value="1"/>
-        </h:commandButton>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.showPage}" value="get users">
-            <f:param name="pageId" value="2"/>
-        </h:commandButton>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.showPage}" value="my test">
-            <f:param name="pageId" value="3"/>
-        </h:commandButton>
-        <br/>
-        <br/>
-        <h:commandButton action="#{navig.showPage}" value="find user">
-            <f:param name="pageId" value="4"/>
-        </h:commandButton>
-        <br/>
-        <br/>
 
+        <h2><h:outputText id="outputMessage"
+                          value="#{userTest.welcomeMessage != null ? userTest.welcomeMessage : ''}"
+        /></h2>
     </h:form>
 
 
 </h:body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -15,20 +15,17 @@
 <h:body>
     <ui:include src="menu.xhtml" />
 
+    <h2><h:outputLabel styleClass="generalSets" value="Wprowadz dane użytkownika: " /> </h2>
+    <br/>
+    <br/>
     <h:form>
-        <h:outputLabel class="center" value="Hello, Krzysztof "/>
-        <h:commandButton action="#{navig.showPage}" value="Home">
-            <f:param name="pageId" value="0"/>
-        </h:commandButton>
-        <br/>
+        <c:if test="#{userDaoBean.errorMessage_addUser == false}">
+            <h:outputLabel value="Error: już taka osoba widnieje w bazie danych" styleClass="error"/>
+        </c:if>
     </h:form>
 
-
-    <br/><br/>
     <h:form>
-
         <h:panelGrid columns="2" cellpadding="5">
-
             <h:outputLabel/><p:message for="nameInput" style="color: red"/>
             <p:outputLabel value="podaj imie:"/>
             <p:inputText id="nameInput" value="#{userDaoBean.myUser.name}" label="imie">
@@ -62,7 +59,7 @@
 
             <h:outputLabel/><p:message for="mobileInput" style="color: red"/>
             <p:outputLabel value="podaj komórkę:"/>
-            <p:inputText id="mobileInput" value="#{userDaoBean.myUser.mobile}" label="tel. komórkowy">
+            <p:inputText id="mobileInput" value="#{userDaoBean.myUser.mobile}" label="tel. komórkowy" >
                 <f:validateLength minimum="9" maximum="10"/>
             </p:inputText>
 
@@ -73,10 +70,8 @@
             </p:inputText>
 
         </h:panelGrid>
-        <p:commandButton value="Save" action="#{userDaoBean.addUser(userDaoBean.myUser)}"/>
+        <p:commandButton styleClass="generalSets" value="Save" action="#{userDaoBean.addUser(userDaoBean.myUser)}"/>
     </h:form>
-
-
 
 </h:body>
 </html>

@@ -2,6 +2,7 @@ package com.muller.myTelephoneBook.userDao;
 
 import com.muller.myTelephoneBook.domain.MyUser;
 import com.muller.myTelephoneBook.repository.UsersRepository;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import java.util.List;
@@ -15,6 +16,16 @@ public class UserDaoBean implements UserDao {
 
     private MyUser findMyUser;
     private MyUser myUser = new MyUser();
+    private boolean errorMessage_addUser = true;
+    private boolean statusMessage_findUser;
+
+    public boolean getErrorMessage_addUser() {
+        return errorMessage_addUser;
+    }
+
+    public boolean getStatusMessage_findUser() {
+        return statusMessage_findUser;
+    }
 
     public MyUser getMyUser() {
         return myUser;
@@ -26,6 +37,10 @@ public class UserDaoBean implements UserDao {
 
     @Override
     public void addUser(MyUser myUser) {
+        errorMessage_addUser = UserControler.checkIfUser(getUsers(), myUser);
+        if (errorMessage_addUser == false) {
+            return;
+        }
         usersRepository.addUser(myUser);
     }
 
@@ -37,6 +52,7 @@ public class UserDaoBean implements UserDao {
     @Override
     public MyUser findMyUser() {
         findMyUser = usersRepository.getFindUser(name, surname);
+        statusMessage_findUser = true;
         return findMyUser;
     }
 

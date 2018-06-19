@@ -1,4 +1,4 @@
-package com.muller.myTelephoneBook.Navigation;
+package com.muller.myTelephoneBook.navigation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

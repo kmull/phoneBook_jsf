@@ -5,18 +5,18 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://java.sun.com/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
-    <h:outputStylesheet name="CSS/myStyle.css"/>
+    <h:outputStylesheet type="text/css" library="CSS" name="myStyle.css"/>
 </h:head>
 
 <h:body>
-    <ui:include src="menu.xhtml" />
+    <ui:include src="menu.xhtml"/>
     <br/>
-    <h:form>
+    <h:form styleClass="my_form">
         <h:outputLabel value="Find by name   "/>
-        <h:commandButton action="#{navig.showPage}" value="Home">
+        <h:commandButton styleClass="findByName_Home" action="#{navig.showPage}" value="Home">
             <f:param name="pageId" value="0"/>
         </h:commandButton>
         <br/>
@@ -92,30 +92,51 @@
 
     <br/>
     <br/>
-    <h:form>
-        <h:panelGrid columns="2" cellpadding="2">
+    <h:form styleClass="my_form">
+        <h:panelGrid columns="1" cellpadding="2">
 
             <h:outputLabel value="podaj imie:"/>
-            <h:inputText value="#{userDaoBean.name}"/>
+            <h:message for="inputName" style="color:red;"/>
+            <h:inputText id="inputName" value="#{userDaoBean.name}" label="name">
+                <f:validateLength minimum="3" maximum="20"/>
+            </h:inputText>
 
             <h:outputLabel value="podaj nazwisko:"/>
-            <h:inputText value="#{userDaoBean.surname}"/>
+            <h:message for="inputSurname" style="color: red"/>
+            <h:inputText id="inputSurname" value="#{userDaoBean.surname}" label="name">
+                <f:validateLength minimum="3" maximum="20"/>
+            </h:inputText>
         </h:panelGrid>
+        <br/>
         <p:commandButton value="Find" action="#{userDaoBean.findMyUser()}"/>
     </h:form>
-    <br/>
-    <p:outputLabel value="Szukane dane:"/>
-    <br/>
-    <hr/>
-    <br/>
-    <p>#{userDaoBean.findMyUser.name}</p>
-    <p>#{userDaoBean.findMyUser.surname}</p>
-    <p>#{userDaoBean.findMyUser.mobile}</p>
-    <p>#{userDaoBean.findMyUser.telephone}</p>
-    <p>#{userDaoBean.findMyUser.address}</p>
-    <br/>
-    <br/>
-    <br/>
 
+    <br/>
+    <c:if test="#{userDaoBean.statusMessage_findUser == true}">
+        <h:form styleClass="my_form">
+            <p:outputLabel value="Szukane dane:"/>
+            <br/>
+
+            <h:panelGrid columns="2">
+                <p:outputLabel value="imie: "/>
+                <p:outputLabel value="#{userDaoBean.findMyUser.name}"/>
+
+                <p:outputLabel value="nazwisko: "/>
+                <p:outputLabel value="#{userDaoBean.findMyUser.surname}"/>
+
+                <p:outputLabel value="tel. stac: "/>
+                <p:outputLabel value="#{userDaoBean.findMyUser.mobile}"/>
+
+                <p:outputLabel value="komórka: "/>
+                <p:outputLabel value="#{userDaoBean.findMyUser.telephone}"/>
+
+                <p:outputLabel value="adres: "/>
+                <p:outputLabel value="#{userDaoBean.findMyUser.address}"/>
+            </h:panelGrid>
+            <br/>
+            <br/>
+            <br/>
+        </h:form>
+    </c:if>
 </h:body>
 </html>
