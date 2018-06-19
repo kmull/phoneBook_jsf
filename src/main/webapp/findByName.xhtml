@@ -113,26 +113,49 @@
 
     <br/>
     <c:if test="#{userDaoBean.statusMessage_findUser == true}">
-        <h:form styleClass="my_form">
-            <p:outputLabel value="Szukane dane:"/>
+        <h:form>
+            <p:outputLabel styleClass="my_form" value="Szukane dane:"/>
             <br/>
 
-            <h:panelGrid columns="2">
-                <p:outputLabel value="imie: "/>
-                <p:outputLabel value="#{userDaoBean.findMyUser.name}"/>
+            <!--<h:panelGrid columns="2">-->
+                <!--<p:outputLabel value="imie: "/>-->
+                <!--<p:outputLabel value="#{userDaoBean.findMyUser.name}"/>-->
 
-                <p:outputLabel value="nazwisko: "/>
-                <p:outputLabel value="#{userDaoBean.findMyUser.surname}"/>
+                <!--<p:outputLabel value="nazwisko: "/>-->
+                <!--<p:outputLabel value="#{userDaoBean.findMyUser.surname}"/>-->
 
-                <p:outputLabel value="tel. stac: "/>
-                <p:outputLabel value="#{userDaoBean.findMyUser.mobile}"/>
+                <!--<p:outputLabel value="tel. stac: "/>-->
+                <!--<p:outputLabel value="#{userDaoBean.findMyUser.mobile}"/>-->
 
-                <p:outputLabel value="komórka: "/>
-                <p:outputLabel value="#{userDaoBean.findMyUser.telephone}"/>
+                <!--<p:outputLabel value="komórka: "/>-->
+                <!--<p:outputLabel value="#{userDaoBean.findMyUser.telephone}"/>-->
 
-                <p:outputLabel value="adres: "/>
-                <p:outputLabel value="#{userDaoBean.findMyUser.address}"/>
-            </h:panelGrid>
+                <!--<p:outputLabel value="adres: "/>-->
+                <!--<p:outputLabel value="#{userDaoBean.findMyUser.address}"/>-->
+            <!--</h:panelGrid>-->
+
+            <h:dataTable styleClass="first-table" value="#{userDaoBean.findMyUser}" var="o">
+                <h:column>
+                    <f:facet name="header">imie</f:facet>
+                    #{o.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">nazwisko</f:facet>
+                    #{o.surname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">tel. stac</f:facet>
+                    #{o.telephone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">komórka:</f:facet>
+                    #{o.mobile}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">adres</f:facet>
+                    #{o.address}
+                </h:column>
+            </h:dataTable>
             <br/>
             <br/>
             <br/>
@@ -140,3 +163,10 @@
     </c:if>
 </h:body>
 </html>
+
+<!--<h:dataTable value="#{userDaoBean.users}" var="o"-->
+             <!--styleClass="first-table">-->
+<!--<h:column>-->
+    <!--<f:facet name="header">imie</f:facet>-->
+    <!--#{o.name}-->
+<!--</h:column>-->

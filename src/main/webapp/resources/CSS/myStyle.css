@@ -16,8 +16,8 @@
     text-align: left;
     /*width: 100%;*/
     border: 1px solid black;
+    text-align: center;
 }
-
 .first-table th {
     background: tan;
 }
