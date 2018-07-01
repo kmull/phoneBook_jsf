@@ -34,6 +34,8 @@ public class NavigationBean implements Serializable {
             return "myTest";
         } else if (pageId.equals("4")) {
             return "findByName";
+        }else if (pageId.equals("9")) {
+            return "version_2/index";
         } else if (pageId.equals("0")) {
             return "index";
         }else {

@@ -8,9 +8,9 @@
       xmlns:b="http://bootsfaces.net/ui">
 
 <h:form>
-    <b:navBar brand="Home" brandHref="index.xhtml" inverse="true">
+    <b:navBar brand="Home" brandHref="version_2/index.xhtml" inverse="true">
         <b:navbarLinks>
-            <b:navCommandLink action="#{navig.showPage}" value="Add User">
+            <b:navCommandLink action="#{navig_2.showPage}" value="Add User">
                 <f:param name="pageId" value="1"/>
             </b:navCommandLink>
             <b:navCommandLink action="#{navig.showPage}" value="Get User">
@@ -19,7 +19,7 @@
             <b:navCommandLink action="#{navig.showPage}" value="Find User">
                 <f:param name="pageId" value="4"/>
             </b:navCommandLink>
-            <b:navCommandLink action="#{navig_2.showPage}" value="version_2">
+            <b:navCommandLink action="#{navig.showPage}" value="version_1">
                 <f:param name="pageId" value="0"/>
             </b:navCommandLink>
         </b:navbarLinks>

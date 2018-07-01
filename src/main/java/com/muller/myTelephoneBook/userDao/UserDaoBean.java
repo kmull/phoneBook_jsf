@@ -10,7 +10,7 @@ import java.util.List;
 @ManagedBean
 public class UserDaoBean implements UserDao {
     @EJB
-    UsersRepository usersRepository;
+    private UsersRepository usersRepository;
     private String name;
     private String surname;
 
@@ -38,7 +38,7 @@ public class UserDaoBean implements UserDao {
     @Override
     public void addUser(MyUser myUser) {
         errorMessage_addUser = UserControler.checkIfUser(getUsers(), myUser);
-        if (errorMessage_addUser == false) {
+        if (!errorMessage_addUser) {
             return;
         }
         usersRepository.addUser(myUser);
@@ -52,7 +52,12 @@ public class UserDaoBean implements UserDao {
     @Override
     public MyUser findMyUser() {
         findMyUser = usersRepository.getFindUser(name, surname);
-        statusMessage_findUser = true;
+        if (findMyUser == null) {
+            statusMessage_findUser = false;
+
+        } else {
+            statusMessage_findUser = true;
+        }
         return findMyUser;
     }
 
